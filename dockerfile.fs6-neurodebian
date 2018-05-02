@@ -1,4 +1,4 @@
-FROM neurodebian
+FROM neurodebian:nd16.04
 
 RUN apt-get update && \
     apt-get install -y \
@@ -12,7 +12,9 @@ RUN apt-get update && \
       tcsh \
       unzip \
       uuid-dev \
-      vim-common
+      vim-common \
+      fsl-core \
+      connectome-workbench
 
 #RUN wget -qO- https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.0/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0.tar.gz | tar zxv -C / \
 #    --exclude='freesurfer/trctrain' \
