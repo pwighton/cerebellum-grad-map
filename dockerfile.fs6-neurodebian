@@ -14,8 +14,14 @@ RUN apt-get update && \
       uuid-dev \
       vim-common \
       fsl-core \
-      connectome-workbench
-
+      connectome-workbench \
+      python-pip \
+      python-dev \
+      build-essential && \
+    pip install --upgrade pip && \
+    pip install --upgrade virtualenv && \
+    pip install nibabel seaborn numpy
+   
 #RUN wget -qO- https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.0/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0.tar.gz | tar zxv -C / \
 #    --exclude='freesurfer/trctrain' \
 #    --exclude='freesurfer/subjects/fsaverage_sym' \
