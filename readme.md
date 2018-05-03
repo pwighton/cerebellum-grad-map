@@ -1,23 +1,19 @@
 # Cerebellum Gradient Mapping
 
-## Generate `dockerfile`
+## Generate the dockerfile
 ```
 docker run --rm kaczmarj/neurodocker:master generate "docker" \
-  --base=neurodebian:stretch-non-free \
-  --pkg-manager=apt \
-  --install fsl \
-  --FreeSurfer version=6.0.0-min \
-  --Miniconda env_name=conda \
-  --user=neuro \
-  --workdir='/home/neuro' > dockerfile
+ --base=neurodebian:stretch-non-free \
+ --pkg-manager=apt \
+ --install fsl connectome-workbench \
+ --freesurfer version=6.0.0-min \
+ --miniconda env_name=conda \
+   conda_install="python=3.6 nibabel numpy seaborn" \
+ --user=neuro \
+ --workdir='/home/neuro' > dockerfile
 ```
 
-## Build the dockefile
+## Build the dockerfile
 ```
 docker build .
-```
-
-## Build neurodebian dockerfile
-```
-docker build -f ./dockerfile.fs6-neurodebian .
 ```
