@@ -15,5 +15,5 @@ docker run --rm kaczmarj/neurodocker:master generate "docker" \
 
 ## Build the dockerfile
 ```
-docker build .
+docker build -t cereb-grad-map .
 ```
